@@ -40,7 +40,7 @@ app.get('/api/restaurants', (req, res) => {
 });
 
 app.get('/api/menu', (req, res) => {
-	// const { lat, lng, restaurantId } = req.query;
+	const { restaurantId } = req.query;
 	// console.log(req.query);
 
 	/* OLD SWIGGY API
@@ -48,8 +48,7 @@ app.get('/api/menu', (req, res) => {
   */
 
 	// const url = `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=${lat}&lng=${lng}&submitAction=ENTER&restaurantId=${restaurantId}`;
-	const url =
-		'https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5204303&lng=73.8567437&restaurantId=';
+	const url = `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5204303&lng=73.8567437&restaurantId=${restaurantId}`;
 
 	fetch(url, {
 		headers: {
